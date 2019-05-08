@@ -13,3 +13,18 @@ __pycache__/
 # Django stuff:
 *.log
 db.sqlite3
+
+# Frontend
+
+# dependencies
+node_modules/
+
+# production
+build
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
