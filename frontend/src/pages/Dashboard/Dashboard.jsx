@@ -1,6 +1,6 @@
-import React from "react"
-import CourseItem from "../../components/CourseItem/CourseItem"
-import mockCourse from "../../__mocks__/courseItem"
+import React from 'react'
+import CourseItem from '../../components/CourseItem/CourseItem'
+import mockCourse from '../../__mocks__/courseItem'
 
 const Dashboard = () => {
   return (
