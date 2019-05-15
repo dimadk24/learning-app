@@ -1,0 +1,18 @@
+{
+  "name": "ВМПС",
+  "id": 1,
+  "items": [
+    {
+      "type": "lecture",
+      "id": 1,
+      "name": "Тема 1.1",
+      "completed": true
+    },
+    {
+      "type": "test",
+      "id": 1,
+      "name": "Тест 1.1",
+      "completed": false
+    }
+  ]
+}
