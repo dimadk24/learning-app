@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import RealLoadable from 'react-loadable'
-import LoadingIndicator from '../LoadingIndicator/LoadingIndicator'
+import Loader from './Loader'
 
 
 function Loadable(props) {
   const { render, loader, ...other } = props
   const Content = RealLoadable({
     loader,
-    loading: LoadingIndicator,
-    render
+    loading: Loader,
+    render,
+    timeout: 10000,
   })
   return <Content {...other} />
 }
