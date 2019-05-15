@@ -1,12 +1,12 @@
 import React from 'react'
-import CourseItem from '../../components/CourseItem/CourseItem'
-import mockCourse from '../../__mocks__/courseItem'
+import CourseCard from '../../components/CourseCard/CourseCard'
+import mockCourseCard from '../../__mocks__/courseLink'
 
 const Dashboard = () => {
   return (
     <section>
       <div className="courses">
-        <CourseItem {...mockCourse} />
+        <CourseCard {...mockCourseCard} />
       </div>
     </section>
   )

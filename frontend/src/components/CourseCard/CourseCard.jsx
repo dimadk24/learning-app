@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-class CourseItem extends Component {
+class CourseCard extends Component {
   createLink() {
     const { id } = this.props
     return `/courses/${id}`
@@ -11,9 +11,9 @@ class CourseItem extends Component {
   render() {
     const { name } = this.props
     return (
-      <div className="course">
-        <p className="course__name">{name}</p>
-        <Link className="course__link" to={this.createLink()}>
+      <div className="course-card">
+        <p className="course-card__name">{name}</p>
+        <Link className="course-card__link" to={this.createLink()}>
           <button type="button">Присоединиться</button>
         </Link>
       </div>
@@ -21,9 +21,9 @@ class CourseItem extends Component {
   }
 }
 
-CourseItem.propTypes = {
+CourseCard.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 }
 
-export default CourseItem
+export default CourseCard
