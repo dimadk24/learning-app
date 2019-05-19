@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import WithLink from '../WithLink/WithLink'
 
-class CourseCard extends Component {
-  createLink() {
-    const { id } = this.props
-    return `/courses/${id}`
-  }
-
-  render() {
-    const { name } = this.props
-    return (
-      <div className="course-card">
-        <p className="course-card__name">{name}</p>
-        <Link className="course-card__link" to={this.createLink()}>
-          <button type="button">Присоединиться</button>
-        </Link>
-      </div>
-    )
-  }
+function CourseCard(props) {
+  const { name, id } = props
+  return (
+    <div className="course-card">
+      <p className="course-card__name">{name}</p>
+      <WithLink type="course" id={id}>
+        <button type="button">Присоединиться</button>
+      </WithLink>
+    </div>
+  )
 }
 
 CourseCard.propTypes = {
