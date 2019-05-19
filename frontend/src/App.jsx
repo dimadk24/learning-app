@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import LoadableCoursePage from './pages/CoursePage/CoursePage'
+import LoadableRouteForTypeWithId from './components/LoadableRouteForTypeWithId/LoadableRouteForTypeWithId'
+import CoursePage from './pages/CoursePage/CoursePage'
 import Dashboard from './pages/Dashboard/Dashboard'
 
 function App() {
@@ -8,7 +9,11 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <Route exact path="/" component={Dashboard} />
-        <Route path="/courses/:id" component={LoadableCoursePage} />
+        <LoadableRouteForTypeWithId
+          type="course"
+          loader={() => import('./__mocks__/coursePage')}
+          render={CoursePage}
+        />
       </div>
     </BrowserRouter>
   )

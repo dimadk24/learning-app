@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import CourseItem from '../../components/CourseItem/CourseItem'
-import Loadable from '../../components/Loadable/Loadable'
 
 function CoursePage({ name, items }) {
   return (
@@ -26,26 +25,4 @@ CoursePage.propTypes = {
   ).isRequired,
 }
 
-function LoadableCoursePage({ match }) {
-  // disabling, cause id will be used to fetch data in the future,
-  // when I'll connect frontend with backend api
-  // currently I mock coursePage, so it's unused
-  // eslint-disable-next-line no-unused-vars
-  const { id } = match.params
-  return (
-    <Loadable
-      render={CoursePage}
-      loader={() => import('../../__mocks__/coursePage')}
-    />
-  )
-}
-
-LoadableCoursePage.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-}
-
-export default LoadableCoursePage
+export default CoursePage
