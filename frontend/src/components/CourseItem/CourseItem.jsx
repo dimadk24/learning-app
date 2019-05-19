@@ -13,14 +13,11 @@ const mapper = {
 function CourseItem({ type, completed, id, ...componentProps }) {
   const Component = mapper[type]
   return (
-    <Completable
-      render={() => (
-        <WithLink type={type} id={id}>
-          <Component {...componentProps} />
-        </WithLink>
-      )}
-      completed={completed}
-    />
+    <Completable completed={completed}>
+      <WithLink type={type} id={id}>
+        <Component {...componentProps} />
+      </WithLink>
+    </Completable>
   )
 }
 

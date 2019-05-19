@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Completable = ({ completed, render }) => {
+const Completable = ({ completed, children }) => {
   return (
     <div>
       <span>{completed ? 'completed' : 'not completed yet'}</span>
-      {render()}
+      {children}
     </div>
   )
 }
 
 Completable.propTypes = {
   completed: PropTypes.bool.isRequired,
-  render: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired,
 }
 
 export default Completable
