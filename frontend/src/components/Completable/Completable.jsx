@@ -12,7 +12,7 @@ const Completable = ({ completed, children }) => {
 
 Completable.propTypes = {
   completed: PropTypes.bool.isRequired,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Completable
