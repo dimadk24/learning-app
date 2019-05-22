@@ -17,7 +17,7 @@ function App() {
         />
         <LoadableRouteForTypeWithId
           type="test"
-          loader={() => import('./__mocks__/test')}
+          loader={(id) => import(`./__mocks__/tests/${id}`)}
           render={TestPage}
         />
       </div>
