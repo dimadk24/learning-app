@@ -2,13 +2,8 @@ import classNames from 'classnames'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import arraysEqual from '../../utils'
-import CheckboxQuestionVariant from '../question-variants/Checkbox/CheckboxQuestionVariant'
-import RadioQuestionVariant from '../question-variants/Radio/RadioQuestionVariant'
 
-const mapper = {
-  radio: RadioQuestionVariant,
-  checkbox: CheckboxQuestionVariant,
-}
+const availableTypes = ['radio', 'checkbox']
 
 class Question extends Component {
   getCorrectAnswersHeader() {
@@ -38,7 +33,6 @@ class Question extends Component {
       selected,
       answers,
     } = this.props
-    const Variant = mapper[type]
     let correctVariants = []
     let answeredCorrectly = false
     if (testIsFinished) {
@@ -60,17 +54,17 @@ class Question extends Component {
             })
           }
           return (
-            // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
             <label
               htmlFor={htmlVariantId}
               key={htmlVariantId}
               className={classes}
             >
-              <Variant
+              <input
+                type={type}
+                name={questionId}
                 id={htmlVariantId}
-                questionId={questionId}
                 value={value}
-                testIsFinished={testIsFinished}
+                disabled={testIsFinished}
               />{' '}
               {value}
             </label>
@@ -91,7 +85,7 @@ class Question extends Component {
 
 Question.propTypes = {
   id: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(availableTypes).isRequired,
   question: PropTypes.string.isRequired,
   variants: PropTypes.arrayOf(
     PropTypes.shape({
