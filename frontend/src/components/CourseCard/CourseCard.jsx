@@ -7,7 +7,7 @@ function CourseCard(props) {
   return (
     <div className="course-card">
       <p className="course-card__name">{name}</p>
-      <WithLink type="course" id={id}>
+      <WithLink objectType="course" id={id}>
         <button type="button">Присоединиться</button>
       </WithLink>
     </div>

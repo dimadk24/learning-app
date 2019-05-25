@@ -14,7 +14,7 @@ function CourseItem({ type, completed, id, ...componentProps }) {
   const Component = mapper[type]
   return (
     <Completable completed={completed}>
-      <WithLink type={type} id={id}>
+      <WithLink objectType={type} id={id}>
         <Component {...componentProps} />
       </WithLink>
     </Completable>

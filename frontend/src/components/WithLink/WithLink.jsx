@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 class WithLink extends Component {
   createLink() {
-    const { type, id } = this.props
-    return `/${type}s/${id}`
+    const { objectType, id } = this.props
+    return `/${objectType}s/${id}`
   }
 
   render() {
@@ -15,7 +15,7 @@ class WithLink extends Component {
 }
 
 WithLink.propTypes = {
-  type: PropTypes.string.isRequired,
+  objectType: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
 }
