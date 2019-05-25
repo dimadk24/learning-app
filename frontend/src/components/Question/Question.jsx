@@ -44,15 +44,16 @@ class Question extends Component {
         <span className="question__text">{question}</span>
         {variants.map(({ id: variantId, value }) => {
           const htmlVariantId = this.createHtmVariantId(variantId)
-          let classes
+          let finishedClasses
           const wasSelected = selected.includes(variantId)
           if (testIsFinished) {
             const isCorrect = answers.includes(variantId)
-            classes = classNames({
-              correct: wasSelected && isCorrect,
-              error: wasSelected && !isCorrect,
-            })
+            finishedClasses = {
+              'variant--correct': wasSelected && isCorrect,
+              'variant--error': wasSelected && !isCorrect,
+            }
           }
+          const classes = classNames('variant', finishedClasses)
           return (
             <label
               htmlFor={htmlVariantId}
