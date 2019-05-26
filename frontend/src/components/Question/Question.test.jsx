@@ -127,7 +127,7 @@ describe('Question component', () => {
       renderQuestionWithProps({
         variants: twoVariants,
         testIsFinished: false,
-      });
+      })
       expect(container.innerHTML).not.toContain('correct')
       expect(container.innerHTML).not.toContain('error')
     })

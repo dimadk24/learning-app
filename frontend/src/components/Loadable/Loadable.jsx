@@ -3,7 +3,6 @@ import React from 'react'
 import RealLoadable from 'react-loadable'
 import Loader from './Loader'
 
-
 function Loadable(props) {
   const { render, loader, ...other } = props
   const Content = RealLoadable({

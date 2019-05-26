@@ -39,7 +39,7 @@ Loader.propTypes = {
 Loader.defaultProps = {
   error: false,
   retry: () => {},
-  timedOut: false
+  timedOut: false,
 }
 
 export default Loader
