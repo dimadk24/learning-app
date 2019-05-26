@@ -95,8 +95,10 @@ Question.propTypes = {
     })
   ).isRequired,
   testIsFinished: PropTypes.bool.isRequired,
-  selected: PropTypes.arrayOf(PropTypes.number), // array of ids of selected variants
-  answers: PropTypes.arrayOf(PropTypes.number), // array of ids of correct variants
+  // array of ids of selected variants
+  selected: PropTypes.arrayOf(PropTypes.number),
+  // array of ids of correct variants
+  answers: PropTypes.arrayOf(PropTypes.number),
 }
 
 Question.defaultProps = {
