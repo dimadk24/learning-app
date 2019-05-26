@@ -17,6 +17,9 @@
   },
   "plugins": ["react"],
   "rules": {
+    "max-len": ["error", {
+      "code": 80
+    }],
     "react/jsx-one-expression-per-line": "off"
   }
 }
