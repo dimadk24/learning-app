@@ -3,6 +3,22 @@ import PropTypes from 'prop-types'
 import Question from '../../components/Question/Question'
 
 class TestPage extends Component {
+  componentDidMount() {
+    const { completed, time } = this.props
+    if (!completed && time) {
+      this.timerId = setTimeout(() => {
+        // send test result here
+        // onSend clearTimeout
+      }, time * 1000)
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.timerId) {
+      clearTimeout(this.timerId)
+    }
+  }
+
   getPercentScore() {
     const { score } = this.props
     const percentScore = score * 100
@@ -36,10 +52,12 @@ TestPage.propTypes = {
   questions: PropTypes.arrayOf(PropTypes.object).isRequired,
   completed: PropTypes.bool.isRequired,
   score: PropTypes.number,
+  time: PropTypes.number,
 }
 
 TestPage.defaultProps = {
   score: 0,
+  time: 0,
 }
 
 export default TestPage
