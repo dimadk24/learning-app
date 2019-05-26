@@ -1,5 +1,5 @@
 function containsAll(arr1, arr2) {
-  return arr2.every(item => arr1.includes(item))
+  return arr2.every((item) => arr1.includes(item))
 }
 
 function arraysEqual(arr1, arr2) {

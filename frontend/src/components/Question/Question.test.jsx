@@ -60,7 +60,7 @@ describe('Question component', () => {
         variants: twoVariants,
       })
       const inputs = querySelectorAll('input')
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         expect(input.getAttribute('type')).toBe('radio')
       })
     })
@@ -71,7 +71,7 @@ describe('Question component', () => {
         variants: twoVariants,
       })
       const inputs = querySelectorAll('input')
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         expect(input.getAttribute('type')).toBe('checkbox')
       })
     })
@@ -81,7 +81,7 @@ describe('Question component', () => {
         variants: twoVariants,
       })
       const inputs = querySelectorAll('input')
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         const inputId = input.getAttribute('id')
         const labels = querySelectorAll(`label[for="${inputId}"]`)
         expect(labels).toHaveLength(1)
@@ -94,7 +94,7 @@ describe('Question component', () => {
         variants: twoVariants,
       })
       const inputs = querySelectorAll('input')
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         expect(input.getAttribute('name')).toContain(defaultQuestionId)
       })
     })
@@ -118,7 +118,7 @@ describe('Question component', () => {
         testIsFinished: false,
       })
       const inputs = querySelectorAll('input')
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         expect(input.hasAttribute('disabled')).toBe(false)
       })
     })

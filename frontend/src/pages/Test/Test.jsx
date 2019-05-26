@@ -8,7 +8,7 @@ const TestPage = ({ id, name, questions, completed }) => {
   return (
     <div className={completed ? 'disabled' : ''}>
       <span>Тест «{name}»</span>
-      {questions.map(question => (
+      {questions.map((question) => (
         <Question {...question} key={question.id} testIsFinished={completed} />
       ))}
     </div>
