@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-const availableTypes = ['radio', 'checkbox']
+import React, { Component } from 'react'
+import Variant from '../Variant/Variant'
 
 class Question extends Component {
   createHtmVariantId(variantId) {
@@ -23,23 +22,16 @@ class Question extends Component {
         <span className="question__text">{question}</span>
         {variants.map(({ id: variantId, value }) => {
           const htmlVariantId = this.createHtmVariantId(variantId)
-          const wasSelected = selectedVariants.includes(variantId)
           return (
-            <label
-              htmlFor={htmlVariantId}
+            <Variant
+              htmlVariantId={htmlVariantId}
               key={htmlVariantId}
-              className="variant"
-            >
-              <input
-                type={type}
-                name={questionId}
-                id={htmlVariantId}
-                value={value}
-                disabled={testIsFinished}
-                defaultChecked={wasSelected}
-              />{' '}
-              {value}
-            </label>
+              questionType={type}
+              questionId={questionId}
+              value={value}
+              testIsFinished={testIsFinished}
+              wasSelected={selectedVariants.includes(variantId)}
+            />
           )
         })}
       </div>
@@ -49,7 +41,7 @@ class Question extends Component {
 
 Question.propTypes = {
   id: PropTypes.number.isRequired,
-  type: PropTypes.oneOf(availableTypes).isRequired,
+  type: PropTypes.string.isRequired,
   question: PropTypes.string.isRequired,
   variants: PropTypes.arrayOf(
     PropTypes.shape({
