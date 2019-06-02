@@ -16,14 +16,14 @@ class Question extends Component {
       question,
       variants,
       testIsFinished,
-      selected,
+      selected: selectedVariants,
     } = this.props
     return (
       <div className="question">
         <span className="question__text">{question}</span>
         {variants.map(({ id: variantId, value }) => {
           const htmlVariantId = this.createHtmVariantId(variantId)
-          const wasSelected = selected.includes(variantId)
+          const wasSelected = selectedVariants.includes(variantId)
           return (
             <label
               htmlFor={htmlVariantId}
