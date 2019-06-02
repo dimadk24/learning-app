@@ -66,6 +66,7 @@ class Question extends Component {
                 id={htmlVariantId}
                 value={value}
                 disabled={testIsFinished}
+                defaultChecked={wasSelected}
               />{' '}
               {value}
             </label>

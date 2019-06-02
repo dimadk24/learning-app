@@ -143,6 +143,22 @@ describe('Question component', () => {
   })
 
   describe('with completed tests', () => {
+    it('should mark inputs of the selected variants as checked', () => {
+      renderQuestionWithProps({
+        variants: twoVariants,
+        testIsFinished: true,
+        selected: [1],
+        answers: [2],
+      })
+      const variants = querySelectorAll('.variant')
+      expect(
+        variants[0].getElementsByTagName('input')[0].hasAttribute('checked')
+      ).toBe(true)
+      expect(
+        variants[1].getElementsByTagName('input')[0].hasAttribute('checked')
+      ).toBe(false)
+    })
+
     it('should add correct class to the selected & correct variants 1', () => {
       renderQuestionWithProps({
         variants: twoVariants,
