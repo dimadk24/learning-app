@@ -122,24 +122,6 @@ describe('Question component', () => {
         expect(input.hasAttribute('disabled')).toBe(false)
       })
     })
-
-    it("shouldn't render correct nor error classes", () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: false,
-      })
-      expect(container.innerHTML).not.toContain('correct')
-      expect(container.innerHTML).not.toContain('error')
-    })
-
-    it('should render answers', () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: false,
-      })
-      const answers = querySelectorAll('.correct-answers')
-      expect(answers).toHaveLength(0)
-    })
   })
 
   describe('with completed tests', () => {
@@ -148,7 +130,6 @@ describe('Question component', () => {
         variants: twoVariants,
         testIsFinished: true,
         selected: [1],
-        answers: [2],
       })
       const variants = querySelectorAll('.variant')
       expect(
@@ -157,68 +138,6 @@ describe('Question component', () => {
       expect(
         variants[1].getElementsByTagName('input')[0].hasAttribute('checked')
       ).toBe(false)
-    })
-
-    it('should add correct class to the selected & correct variants 1', () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: true,
-        selected: [1],
-        answers: [1],
-      })
-      const variants = querySelectorAll('.variant')
-      expect(variants[0].classList.contains('variant--correct')).toBe(true)
-      expect(variants[1].classList.contains('variant--correct')).toBe(false)
-    })
-
-    it('should add correct class to the selected & correct variants 2', () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: true,
-        selected: [1],
-        answers: [1, 2],
-      })
-      const variants = querySelectorAll('.variant')
-      expect(variants[0].classList.contains('variant--correct')).toBe(true)
-      expect(variants[1].classList.contains('variant--correct')).toBe(false)
-    })
-
-    it('should add error class to the selected & incorrect variants', () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: true,
-        selected: [1, 2],
-        answers: [1],
-      })
-      const variants = querySelectorAll('.variant')
-      expect(variants[1].classList.contains('variant--error')).toBe(true)
-      expect(variants[1].classList.contains('variant--correct')).toBe(false)
-    })
-
-    it('should render correct answers block if answered incorrectly', () => {
-      renderQuestionWithProps({
-        variants: twoVariants,
-        testIsFinished: true,
-        selected: [1],
-        answers: [1, 2],
-      })
-      const correctAnswers = querySelectorAll('.correct-answers')
-      expect(correctAnswers).toHaveLength(1)
-    })
-
-    it('should contain correct answers inside correct-answers block', () => {
-      renderQuestionWithProps({
-        variants: [
-          { id: 1, value: 'first variant' },
-          { id: 2, value: 'second variant' },
-        ],
-        testIsFinished: true,
-        selected: [1],
-        answers: [1, 2],
-      })
-      const correctAnswers = querySelectorAll('.correct-answers')[0]
-      expect(correctAnswers.innerHTML).toContain('first variant')
-      expect(correctAnswers.innerHTML).toContain('second variant')
     })
   })
 })

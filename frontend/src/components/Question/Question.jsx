@@ -1,23 +1,9 @@
-import classNames from 'classnames'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import arraysEqual from '../../utils'
 
 const availableTypes = ['radio', 'checkbox']
 
 class Question extends Component {
-  getCorrectAnswersHeader() {
-    const { answers } = this.props
-    const numberOfAnswers = answers.length
-    if (numberOfAnswers === 0) {
-      throw new Error("Number of answers can't be 0")
-    }
-    if (numberOfAnswers === 1) {
-      return 'Верный ответ'
-    }
-    return 'Верные ответы'
-  }
-
   createHtmVariantId(variantId) {
     const { id: questionId } = this.props
     return `${questionId}-${variantId}`
@@ -31,34 +17,18 @@ class Question extends Component {
       variants,
       testIsFinished,
       selected,
-      answers,
     } = this.props
-    let correctVariants = []
-    let answeredCorrectly = false
-    if (testIsFinished) {
-      correctVariants = variants.filter(({ id }) => answers.includes(id))
-      answeredCorrectly = arraysEqual(answers, selected)
-    }
     return (
       <div className="question">
         <span className="question__text">{question}</span>
         {variants.map(({ id: variantId, value }) => {
           const htmlVariantId = this.createHtmVariantId(variantId)
-          let finishedClasses
           const wasSelected = selected.includes(variantId)
-          if (testIsFinished) {
-            const isCorrect = answers.includes(variantId)
-            finishedClasses = {
-              'variant--correct': wasSelected && isCorrect,
-              'variant--error': wasSelected && !isCorrect,
-            }
-          }
-          const classes = classNames('variant', finishedClasses)
           return (
             <label
               htmlFor={htmlVariantId}
               key={htmlVariantId}
-              className={classes}
+              className="variant"
             >
               <input
                 type={type}
@@ -72,14 +42,6 @@ class Question extends Component {
             </label>
           )
         })}
-        {testIsFinished && !answeredCorrectly && (
-          <div className="correct-answers">
-            <h3>{this.getCorrectAnswersHeader()}</h3>
-            {correctVariants.map(({ id: variantId, value }) => (
-              <p key={this.createHtmVariantId(variantId)}>{value}</p>
-            ))}
-          </div>
-        )}
       </div>
     )
   }
@@ -98,13 +60,10 @@ Question.propTypes = {
   testIsFinished: PropTypes.bool.isRequired,
   // array of ids of selected variants
   selected: PropTypes.arrayOf(PropTypes.number),
-  // array of ids of correct variants
-  answers: PropTypes.arrayOf(PropTypes.number),
 }
 
 Question.defaultProps = {
   selected: [],
-  answers: [],
 }
 
 export default Question
