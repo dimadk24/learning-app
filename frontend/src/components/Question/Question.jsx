@@ -6,7 +6,7 @@ const availableTypes = ['radio', 'checkbox']
 class Question extends Component {
   createHtmVariantId(variantId) {
     const { id: questionId } = this.props
-    return `${questionId}-${variantId}`
+    return `question-${questionId}-variant-${variantId}`
   }
 
   render() {
