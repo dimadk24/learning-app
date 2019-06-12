@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Link, Route } from 'react-router-dom'
 import coursePageData from './__mocks__/coursePage'
 import LoadableRouteForTypeWithId from './components/LoadableRouteForTypeWithId/LoadableRouteForTypeWithId'
 import CoursePage from './pages/CoursePage/CoursePage'
@@ -8,8 +8,21 @@ import './sass/style.scss'
 
 function App() {
   return (
-    <main className="page-main">
-      <BrowserRouter>
+    <BrowserRouter>
+      <header className="page-header">
+        <h1 className="page-header__title">
+          <Link to="/">Learning up</Link>
+        </h1>
+
+        <nav className="nav">
+          <p className="nav__student">
+            <span className="nav__student-name">Иван Иванов</span>
+            <span className="nav__student-group">51392</span>
+          </p>
+        </nav>
+      </header>
+
+      <main className="page-main">
         <div className="container">
           <Route
             exact
@@ -22,8 +35,8 @@ function App() {
             render={TestPage}
           />
         </div>
-      </BrowserRouter>
-    </main>
+      </main>
+    </BrowserRouter>
   )
 }
 
