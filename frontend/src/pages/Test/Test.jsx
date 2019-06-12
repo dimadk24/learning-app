@@ -14,16 +14,27 @@ class TestPage extends Component {
     // eslint-disable-next-line no-unused-vars
     const { id, name, questions, completed } = this.props
     return (
-      <div className={completed ? 'disabled' : ''}>
-        <span>Тест «{name}»</span>
-        {questions.map((question) => (
-          <Question
-            {...question}
-            key={question.id}
-            testIsFinished={completed}
-          />
-        ))}
-        {completed && <span>Оценка: {this.getPercentScore()}</span>}
+      <div className="test-wrapper">
+        <div className={completed ? 'disabled' : ''}>
+          <span className="test__name">Тест «{name}»</span>
+          {questions.map((question) => (
+            <Question
+              {...question}
+              key={question.id}
+              testIsFinished={completed}
+            />
+          ))}
+          {completed && (
+            <span className="test__score">
+              Оценка: {this.getPercentScore()}
+            </span>
+          )}
+          {!completed && (
+            <button type="submit" className="test__submit-button">
+              Проверить
+            </button>
+          )}
+        </div>
       </div>
     )
   }
