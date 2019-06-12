@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const Lecture = ({ name }) => {
   return (
-    <div className="lecture">
-      <span className="lecture__name">{name}</span>
+    <div className="course-item course-item--theme">
+      <span className="course-item__name">{name}</span>
     </div>
   )
 }

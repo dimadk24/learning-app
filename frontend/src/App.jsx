@@ -1,27 +1,29 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
+import coursePageData from './__mocks__/coursePage'
 import LoadableRouteForTypeWithId from './components/LoadableRouteForTypeWithId/LoadableRouteForTypeWithId'
-import TestPage from './pages/Test/Test'
 import CoursePage from './pages/CoursePage/CoursePage'
-import Dashboard from './pages/Dashboard/Dashboard'
+import TestPage from './pages/Test/Test'
+import './sass/style.scss'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="container">
-        <Route exact path="/" component={Dashboard} />
-        <LoadableRouteForTypeWithId
-          type="course"
-          loader={() => import('./__mocks__/coursePage')}
-          render={CoursePage}
-        />
-        <LoadableRouteForTypeWithId
-          type="test"
-          loader={(id) => import(`./__mocks__/tests/${id}`)}
-          render={TestPage}
-        />
-      </div>
-    </BrowserRouter>
+    <main className="page-main">
+      <BrowserRouter>
+        <div className="container">
+          <Route
+            exact
+            path="/"
+            render={() => <CoursePage {...coursePageData} />}
+          />
+          <LoadableRouteForTypeWithId
+            type="test"
+            loader={(id) => import(`./__mocks__/tests/${id}`)}
+            render={TestPage}
+          />
+        </div>
+      </BrowserRouter>
+    </main>
   )
 }
 

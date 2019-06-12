@@ -1,6 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import Completable from '../Completable/Completable'
+import React from 'react'
 import Lecture from '../Lecture/Lecture'
 import Test from '../Test/Test'
 import WithLink from '../WithLink/WithLink'
@@ -13,11 +12,9 @@ const mapper = {
 function CourseItem({ type, completed, id, ...componentProps }) {
   const Component = mapper[type]
   return (
-    <Completable completed={completed}>
-      <WithLink objectType={type} id={id}>
-        <Component {...componentProps} />
-      </WithLink>
-    </Completable>
+    <WithLink objectType={type} id={id}>
+      <Component {...componentProps} />
+    </WithLink>
   )
 }
 
