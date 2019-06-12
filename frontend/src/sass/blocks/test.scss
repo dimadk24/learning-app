@@ -1,0 +1,127 @@
+.test-wrapper {
+  @include horizontal-paddings(30px);
+  @include vertical-paddings(30px);
+
+  @media (min-width: $mobile-width) {
+    @include container($mobile-width - 30px);
+  }
+
+  @media (min-width: $tablet-width) {
+    @include container($tablet-width - 300px);
+  }
+
+  @media (min-width: $desktop-width) {
+    @include container($tablet-width - 300px);
+  }
+
+  min-width: 290px;
+  overflow: hidden;
+  margin-top: 2.5em;
+  margin-bottom: 5em;
+}
+
+
+.test__name {
+  display: block;
+  margin-bottom: 0.7em;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.question {
+  @include vertical-paddings(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.question input {
+  margin-right: 0.5em;
+}
+
+.question__text {
+  @include vertical-paddings(8px);
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+  line-height: 140%;
+  font-weight: 700;
+}
+
+.variant {
+  margin-bottom: 0.6em;
+  font-size: 1em;
+  line-height: 150%;
+  color: $semi-transparent-dark;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.test__submit-button {
+  @include horizontal-paddings(1.2em);
+  @include vertical-paddings(0.8em);
+  width: 100%;
+  max-width: 260px;
+  margin: 20px 0;
+  background-color: $accent-color;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.test__submit-button:hover,
+.test__submit-button:focus,
+.test__submit-button:active {
+  filter: saturate(0.3);
+}
+
+
+.test__score {
+  @include horizontal-paddings();
+  @include vertical-paddings(20px);
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  width: 12em;
+  min-width: 220px;
+  font-size: 1.6em;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #4caf50;
+  color: $white;
+}
+
+@media (max-width: $tablet-width) {
+  .test__score {
+    width: 100%;
+  }
+}
+
+.disabled .question__text,
+.disabled .variant {
+  color: $disabled-dark;
+  cursor: auto;
+}
+
+.disabled input[type="radio"],
+.disabled input[type="checkbox"] {
+  cursor: auto;
+}

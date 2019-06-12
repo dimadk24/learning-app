@@ -1,0 +1,161 @@
+.form-wrapper {
+  @include container-adaptive-small();
+}
+
+.form-wrapper--small {
+  @media (min-width: $tablet-width) {
+    @include container($mobile-width);
+  }
+
+  @media (min-width: $desktop-width) {
+    @include container($mobile-width);
+  }
+}
+
+.signup-form {
+  @include horizontal-paddings(30px);
+  @include vertical-paddings(20px);
+  background-color: $white;
+  border-radius: 5px;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  box-shadow: 0 0 10px $transparent-dark;
+}
+
+
+.signup-form__title {
+  @include horizontal-paddings(20px);
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.signup-form__columns {
+  @include list-reset();
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  border: none;
+}
+
+@media (max-width: $tablet-width) {
+  .signup-form__columns {
+    flex-direction: column;
+  }
+}
+
+.signup-form__item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5em;
+}
+
+.signup-form--login .signup-form__item {
+  margin-right: 0;
+}
+
+@media (max-width: $tablet-width) {
+  .signup-form__item {
+    margin-right: 0;
+  }
+}
+
+.signup-form__item:last-child {
+  margin-right: 0;
+}
+
+.signup-form__item label {
+  color: $semi-transparent-dark;
+}
+
+.signup-form__input[type="text"],
+.signup-form__input[type="password"],
+.signup-form__input[type="email"],
+.signup-form__group-select {
+  @include horizontal-paddings(1em);
+  @include vertical-paddings(0.7em);
+  margin-top: 0.35em;
+  width: 100%;
+  min-width: 220px;
+  max-width: 420px;
+  font-size: 1em;
+  line-height: 1.5em;
+  border: none;
+  background-color: $main-bg-color;
+  border-radius: 3px;
+}
+
+.signup-form__item--email,
+.signup-form__item--password {
+  position: relative;
+
+  & .signup-form__input {
+    padding-left: 2.6em;
+  }
+
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 83%;
+    left: 1.4em;
+    transform: translate(-50%, -83%) scale(0.8);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.signup-form__item--email {
+  &::before {
+    background-image: url("../img/icon-mail.svg");
+  }
+}
+
+.signup-form__item--password {
+  &::before {
+    background-image: url("../img/icon-key.svg");
+  }
+}
+
+.signup-form__button {
+  @include horizontal-paddings(1.2em);
+  @include vertical-paddings(0.8em);
+  width: 100%;
+  max-width: 260px;
+  margin: 20px 0;
+  background-color: $accent-color;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.signup-form__button:hover,
+.signup-form__button:focus,
+.signup-form__button:active {
+  filter: saturate(0.3);
+}
+
+.signup-form__help-link {
+  margin: 0;
+  color: $semi-transparent-dark;
+  font-size: 0.9em;
+}
+
+.signup-form__help-link a {
+  @include horizontal-paddings(0.3em);
+  color: $accent-color;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.signup-form__help-link a:hover,
+.signup-form__help-link a:focus {
+  text-decoration: underline;
+}
