@@ -3,8 +3,17 @@ import PropTypes from 'prop-types'
 import Question from '../../components/Question/Question'
 
 class TestPage extends Component {
+  constructor(props) {
+    super(props)
+    const { completed, score } = this.props
+    this.state = {
+      completed,
+      score,
+    }
+  }
+
   getPercentScore() {
-    const { score } = this.props
+    const { score } = this.state
     const percentScore = score * 100
     return `${percentScore}%`
   }
@@ -12,7 +21,8 @@ class TestPage extends Component {
   render() {
     // will be used later
     // eslint-disable-next-line no-unused-vars
-    const { id, name, questions, completed } = this.props
+    const { id, name, questions } = this.props
+    const { completed } = this.state
     return (
       <div className="test-wrapper">
         <div className={completed ? 'disabled' : ''}>
@@ -30,7 +40,11 @@ class TestPage extends Component {
             </span>
           )}
           {!completed && (
-            <button type="submit" className="test__submit-button">
+            <button
+              type="submit"
+              className="test__submit-button"
+              onClick={() => this.setState({ completed: true, score: 0.33 })}
+            >
               Проверить
             </button>
           )}
