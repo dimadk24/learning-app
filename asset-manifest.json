@@ -1,20 +1,20 @@
 {
   "files": {
-    "static/js/0.e1a67460.chunk.js": "/static/js/0.e1a67460.chunk.js",
-    "static/js/0.e1a67460.chunk.js.map": "/static/js/0.e1a67460.chunk.js.map",
-    "static/js/1.4dc40809.chunk.js": "/static/js/1.4dc40809.chunk.js",
-    "static/js/1.4dc40809.chunk.js.map": "/static/js/1.4dc40809.chunk.js.map",
-    "main.css": "/static/css/main.037dc4b2.chunk.css",
-    "main.js": "/static/js/main.569759f6.chunk.js",
-    "main.js.map": "/static/js/main.569759f6.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.8458f115.js",
-    "runtime~main.js.map": "/static/js/runtime~main.8458f115.js.map",
-    "static/js/4.b458d194.chunk.js": "/static/js/4.b458d194.chunk.js",
-    "static/js/4.b458d194.chunk.js.map": "/static/js/4.b458d194.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.228c2fd6710c14ac7aaed98c76d19963.js": "/precache-manifest.228c2fd6710c14ac7aaed98c76d19963.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.037dc4b2.chunk.css.map": "/static/css/main.037dc4b2.chunk.css.map",
-    "static/media/style.scss": "/static/media/roboto-v19-latin_cyrillic-regular.c2bf54bc.woff"
+    "static/js/0.e1a67460.chunk.js": "/learning-app/static/js/0.e1a67460.chunk.js",
+    "static/js/0.e1a67460.chunk.js.map": "/learning-app/static/js/0.e1a67460.chunk.js.map",
+    "static/js/1.4dc40809.chunk.js": "/learning-app/static/js/1.4dc40809.chunk.js",
+    "static/js/1.4dc40809.chunk.js.map": "/learning-app/static/js/1.4dc40809.chunk.js.map",
+    "main.css": "/learning-app/static/css/main.a392f290.chunk.css",
+    "main.js": "/learning-app/static/js/main.38cf39de.chunk.js",
+    "main.js.map": "/learning-app/static/js/main.38cf39de.chunk.js.map",
+    "runtime~main.js": "/learning-app/static/js/runtime~main.7ab1432e.js",
+    "runtime~main.js.map": "/learning-app/static/js/runtime~main.7ab1432e.js.map",
+    "static/js/4.b458d194.chunk.js": "/learning-app/static/js/4.b458d194.chunk.js",
+    "static/js/4.b458d194.chunk.js.map": "/learning-app/static/js/4.b458d194.chunk.js.map",
+    "index.html": "/learning-app/index.html",
+    "precache-manifest.ca524eac2dacb5df1a6d9692017e7869.js": "/learning-app/precache-manifest.ca524eac2dacb5df1a6d9692017e7869.js",
+    "service-worker.js": "/learning-app/service-worker.js",
+    "static/css/main.a392f290.chunk.css.map": "/learning-app/static/css/main.a392f290.chunk.css.map",
+    "static/media/style.scss": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.9af3b948.woff2"
   }
 }
