@@ -1,27 +1,29 @@
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Lecture from '../Lecture/Lecture'
-import Test from '../Test/Test'
 import WithLink from '../WithLink/WithLink'
 
-const mapper = {
-  lecture: Lecture,
-  test: Test,
+const additionalClassnameMapper = {
+  lecture: 'course-item--theme',
+  test: 'course-item--test',
 }
 
-function CourseItem({ type, completed, id, ...componentProps }) {
-  const Component = mapper[type]
+function CourseItem({ type, id, name }) {
+  const additionalClassname = additionalClassnameMapper[type]
+  const classes = classNames('course-item', additionalClassname)
   return (
     <WithLink objectType={type} id={id}>
-      <Component {...componentProps} />
+      <div className={classes}>
+        <span className="course-item__name">{name}</span>
+      </div>
     </WithLink>
   )
 }
 
 CourseItem.propTypes = {
-  type: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
   id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 }
 
 export default CourseItem
