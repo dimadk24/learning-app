@@ -16,7 +16,7 @@ function App() {
 
         <nav className="nav">
           <p className="nav__student">
-            <span className="nav__student-name">Иван Иванов</span>
+            <span className="nav__student-name">Дима Крутолянов</span>
             <span className="nav__student-group">51392</span>
           </p>
         </nav>
