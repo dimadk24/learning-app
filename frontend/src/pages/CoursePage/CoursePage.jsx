@@ -22,7 +22,6 @@ CoursePage.propTypes = {
       type: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired,
 }
