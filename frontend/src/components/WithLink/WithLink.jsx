@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 class WithLink extends Component {
   createLink() {
     const { objectType, id } = this.props
-    return `/${objectType}s/${id}`
+    if (objectType === 'test') return `/${objectType}s/${id}`
+    return `/pdf/${objectType}/${id}`
   }
 
   render() {

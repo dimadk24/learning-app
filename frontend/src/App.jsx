@@ -3,8 +3,13 @@ import { BrowserRouter, Link, Route } from 'react-router-dom'
 import coursePageData from './__mocks__/coursePage'
 import LoadableRouteForTypeWithId from './components/LoadableRouteForTypeWithId/LoadableRouteForTypeWithId'
 import CoursePage from './pages/CoursePage/CoursePage'
+import PdfPage from './pages/PdfPage/PdfPage'
 import TestPage from './pages/Test/Test'
 import './sass/style.scss'
+
+function getCourseItemById(id) {
+  return coursePageData.items.find((item) => item.id === id)
+}
 
 function App() {
   return (
@@ -33,6 +38,18 @@ function App() {
             type="test"
             loader={(id) => import(`./__mocks__/tests/${id}`)}
             render={TestPage}
+          />
+          <Route
+            path="/pdf/:type/:id"
+            render={({ match }) => {
+              const { params } = match
+              const { type, id } = params
+              const courseItem = getCourseItemById(parseInt(id, 10))
+              const pdfUrl = `${process.env.PUBLIC_URL}/data/${type}s/${
+                courseItem.filename
+              }.pdf`
+              return <PdfPage url={pdfUrl} />
+            }}
           />
         </div>
       </main>
