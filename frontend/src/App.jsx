@@ -8,7 +8,7 @@ import './sass/style.scss'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <header className="page-header">
         <h1 className="page-header__title">
           <Link to="/">Learning up</Link>
