@@ -6,6 +6,7 @@ import WithLink from '../WithLink/WithLink'
 const additionalClassnameMapper = {
   lecture: 'course-item--theme',
   test: 'course-item--test',
+  lab: 'course-item--lab',
 }
 
 function CourseItem({ type, id, name }) {
