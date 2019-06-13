@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef9fff7219f1b797ab567437d2fa810e",
+    "revision": "5564eaca4e0eab852d0c0ea989afb7a3",
     "url": "/learning-app/index.html"
   },
   {
-    "revision": "38aa4863d1419f714d9f",
-    "url": "/learning-app/static/css/main.a392f290.chunk.css"
+    "revision": "ec7453ae462e512d0f33",
+    "url": "/learning-app/static/css/main.14ad6c36.chunk.css"
   },
   {
-    "revision": "74fca8717be9eae78f22",
-    "url": "/learning-app/static/js/0.e1a67460.chunk.js"
+    "revision": "f317bd86f58198961ca4",
+    "url": "/learning-app/static/js/0.92f602ac.chunk.js"
   },
   {
-    "revision": "292d4d5771e8c669d0d5",
-    "url": "/learning-app/static/js/1.4dc40809.chunk.js"
+    "revision": "f718be45db4faf4ce675",
+    "url": "/learning-app/static/js/1.661f229c.chunk.js"
   },
   {
-    "revision": "348c71c89823b70b40c2",
-    "url": "/learning-app/static/js/4.b458d194.chunk.js"
+    "revision": "1178328b1fa7e962cd34",
+    "url": "/learning-app/static/js/4.076da5bb.chunk.js"
   },
   {
-    "revision": "38aa4863d1419f714d9f",
-    "url": "/learning-app/static/js/main.11d8e7fa.chunk.js"
+    "revision": "ec7453ae462e512d0f33",
+    "url": "/learning-app/static/js/main.dc6d95a3.chunk.js"
   },
   {
-    "revision": "cdd66918e83d9bb80969",
-    "url": "/learning-app/static/js/runtime~main.7ab1432e.js"
+    "revision": "5bc8ef50bc29b159236c",
+    "url": "/learning-app/static/js/runtime~main.dd08cb01.js"
   },
   {
     "revision": "b3429f7228552315caed819c9f85b061",
@@ -64,15 +64,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.12551865.woff2"
   },
   {
-    "revision": "bb3a63bdeaf5dabd8f4ea3b0c4bc25b6",
-    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.bb3a63bd.woff"
-  },
-  {
-    "revision": "0fe5cb2602d1e1173202207bd81f9824",
-    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.0fe5cb26.woff"
+    "revision": "cf6c1c770a3f6f15570c6758e995b5bc",
+    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.cf6c1c77.woff"
   },
   {
     "revision": "9af3b948743adc65907bf6b73aba735e",
     "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.9af3b948.woff2"
+  },
+  {
+    "revision": "c2bf54bc567401239fcc81b063df7423",
+    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.c2bf54bc.woff"
   }
 ]);
