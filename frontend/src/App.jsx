@@ -7,8 +7,10 @@ import PdfPage from './pages/PdfPage/PdfPage'
 import TestPage from './pages/Test/Test'
 import './sass/style.scss'
 
-function getCourseItemById(id) {
-  return coursePageData.items.find((item) => item.id === id)
+function getCourseItemById(id, type) {
+  return coursePageData.items.find(
+    (item) => item.id === id && item.type === type
+  )
 }
 
 function App() {
@@ -44,7 +46,7 @@ function App() {
             render={({ match }) => {
               const { params } = match
               const { type, id } = params
-              const courseItem = getCourseItemById(parseInt(id, 10))
+              const courseItem = getCourseItemById(parseInt(id, 10), type)
               const pdfUrl = `${process.env.PUBLIC_URL}/data/${type}s/${
                 courseItem.filename
               }.pdf`
