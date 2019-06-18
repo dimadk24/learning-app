@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5564eaca4e0eab852d0c0ea989afb7a3",
+    "revision": "0def32f6507d964f3344df2854c9409e",
     "url": "/learning-app/index.html"
   },
   {
-    "revision": "ec7453ae462e512d0f33",
-    "url": "/learning-app/static/css/main.14ad6c36.chunk.css"
+    "revision": "07e455cb2819b17a0d51",
+    "url": "/learning-app/static/css/main.733e5bc4.chunk.css"
   },
   {
     "revision": "f317bd86f58198961ca4",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/learning-app/static/js/4.076da5bb.chunk.js"
   },
   {
-    "revision": "ec7453ae462e512d0f33",
-    "url": "/learning-app/static/js/main.dc6d95a3.chunk.js"
+    "revision": "07e455cb2819b17a0d51",
+    "url": "/learning-app/static/js/main.847cf28b.chunk.js"
   },
   {
     "revision": "5bc8ef50bc29b159236c",
@@ -64,15 +64,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.12551865.woff2"
   },
   {
-    "revision": "cf6c1c770a3f6f15570c6758e995b5bc",
-    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.cf6c1c77.woff"
+    "revision": "bb3a63bdeaf5dabd8f4ea3b0c4bc25b6",
+    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-700.bb3a63bd.woff"
+  },
+  {
+    "revision": "0fe5cb2602d1e1173202207bd81f9824",
+    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.0fe5cb26.woff"
   },
   {
     "revision": "9af3b948743adc65907bf6b73aba735e",
     "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.9af3b948.woff2"
-  },
-  {
-    "revision": "c2bf54bc567401239fcc81b063df7423",
-    "url": "/learning-app/static/media/roboto-v19-latin_cyrillic-regular.c2bf54bc.woff"
   }
 ]);
