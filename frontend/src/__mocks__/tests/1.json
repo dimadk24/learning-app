@@ -21,7 +21,8 @@
           "value": "Микрокомпьютеры"
         }
       ],
-      "selected": [1]
+      "selected": [1],
+      "answers": [1]
     },
     {
       "id": 2,
@@ -45,7 +46,8 @@
           "value": "по эпохам"
         }
       ],
-      "selected": [2, 3]
+      "selected": [2, 3],
+      "answers": [1, 2, 4]
     },
     {
       "id": 3,
@@ -65,7 +67,8 @@
           "value": "телефоны"
         }
       ],
-      "selected": [2]
+      "selected": [2],
+      "answers": [1]
     }
   ],
   "score": 0.33
