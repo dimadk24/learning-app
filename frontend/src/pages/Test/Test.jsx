@@ -14,6 +14,15 @@ class TestPage extends Component {
     }
   }
 
+  componentDidMount() {
+    const { id } = this.props
+    const alreadySolvedTest = localStorage.getItem(`test-${id}`)
+    if (alreadySolvedTest) {
+      const { score } = JSON.parse(alreadySolvedTest)
+      this.setState({ completed: true, score })
+    }
+  }
+
   onChoose(questionId, variants) {
     const { questions } = this.state
     const questionForUpdateIndex = questions.findIndex(
@@ -24,6 +33,7 @@ class TestPage extends Component {
   }
 
   onSubmit = () => {
+    const { id } = this.props
     const { questions } = this.state
     let numberOfCorrectAnswers = 0
     questions.forEach((question) => {
@@ -32,6 +42,7 @@ class TestPage extends Component {
     })
     const mark = Math.round((numberOfCorrectAnswers / questions.length) * 10)
     this.setState({ completed: true, score: mark })
+    localStorage.setItem(`test-${id}`, JSON.stringify({ score: mark }))
   }
 
   render() {
