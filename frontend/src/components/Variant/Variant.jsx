@@ -11,6 +11,7 @@ function Variant(props) {
     testIsFinished,
     wasSelected,
     htmlVariantId,
+    onClick,
   } = props
   return (
     <label htmlFor={htmlVariantId} className="variant">
@@ -21,6 +22,7 @@ function Variant(props) {
         value={value}
         disabled={testIsFinished}
         defaultChecked={wasSelected}
+        onClick={onClick}
       />{' '}
       {value}
     </label>
@@ -34,10 +36,12 @@ Variant.propTypes = {
   value: PropTypes.string.isRequired,
   testIsFinished: PropTypes.bool.isRequired,
   wasSelected: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 Variant.defaultProps = {
   wasSelected: false,
+  onClick: () => {},
 }
 
 export default Variant

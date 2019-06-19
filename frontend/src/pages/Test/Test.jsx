@@ -1,28 +1,44 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Question from '../../components/Question/Question'
+import arraysEqual from '../../utils'
 
 class TestPage extends Component {
   constructor(props) {
     super(props)
-    const { completed, score } = this.props
+    const { completed, score, questions } = this.props
     this.state = {
       completed,
       score,
+      questions,
     }
   }
 
-  getPercentScore() {
-    const { score } = this.state
-    const percentScore = score * 100
-    return `${percentScore}%`
+  onChoose(questionId, variants) {
+    const { questions } = this.state
+    const questionForUpdateIndex = questions.findIndex(
+      (question) => question.id === questionId
+    )
+    questions[questionForUpdateIndex].selected = variants
+    this.setState({ questions })
+  }
+
+  onSubmit = () => {
+    const { questions } = this.state
+    let numberOfCorrectAnswers = 0
+    questions.forEach((question) => {
+      if (arraysEqual(question.selected || [], question.answers))
+        numberOfCorrectAnswers += 1
+    })
+    const mark = Math.round((numberOfCorrectAnswers / questions.length) * 10)
+    this.setState({ completed: true, score: mark })
   }
 
   render() {
     // will be used later
     // eslint-disable-next-line no-unused-vars
-    const { id, name, questions } = this.props
-    const { completed } = this.state
+    const { id, name } = this.props
+    const { completed, questions, score } = this.state
     return (
       <div className="test-wrapper">
         <div className={completed ? 'disabled' : ''}>
@@ -32,18 +48,15 @@ class TestPage extends Component {
               {...question}
               key={question.id}
               testIsFinished={completed}
+              onChoose={(variants) => this.onChoose(question.id, variants)}
             />
           ))}
-          {completed && (
-            <span className="test__score">
-              Оценка: {this.getPercentScore()}
-            </span>
-          )}
+          {completed && <span className="test__score">Оценка: {score}</span>}
           {!completed && (
             <button
               type="submit"
               className="test__submit-button"
-              onClick={() => this.setState({ completed: true, score: 0.33 })}
+              onClick={this.onSubmit}
             >
               Проверить
             </button>
