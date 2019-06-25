@@ -1,47 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e110b67cbfbe0bbffdade9aea7f7d940",
+    "revision": "645e77b440dc2c9146b7875859b725aa",
     "url": "/learning-app/index.html"
   },
   {
-    "revision": "e5bf6115496563297238",
-    "url": "/learning-app/static/css/main.733e5bc4.chunk.css"
+    "revision": "1c113b173103f3d5d7f5",
+    "url": "/learning-app/static/css/main.6d1cdcc9.chunk.css"
   },
   {
-    "revision": "1f4c04eda8910009bf74",
-    "url": "/learning-app/static/js/0.94a53c8d.chunk.js"
+    "revision": "75561cd0e945c3c2cbc9",
+    "url": "/learning-app/static/js/0.f6e3d69f.chunk.js"
   },
   {
-    "revision": "99d114d39ad35a215cfc",
-    "url": "/learning-app/static/js/1.3a49b48f.chunk.js"
+    "revision": "c9420eb3c2847a0644e8",
+    "url": "/learning-app/static/js/1.0b14c898.chunk.js"
   },
   {
-    "revision": "fcdb838224623b1dd9ca",
-    "url": "/learning-app/static/js/2.80036ac9.chunk.js"
+    "revision": "a95796cdf22b54d9a385",
+    "url": "/learning-app/static/js/2.7ce4489c.chunk.js"
   },
   {
-    "revision": "476041b021e563ca6d6a",
-    "url": "/learning-app/static/js/3.2d6ab4be.chunk.js"
+    "revision": "825823af13eec63cd4ed",
+    "url": "/learning-app/static/js/3.f829f197.chunk.js"
   },
   {
-    "revision": "16328d5696b519949aad",
-    "url": "/learning-app/static/js/4.c2109b44.chunk.js"
+    "revision": "43e14770cd29a5c4a605",
+    "url": "/learning-app/static/js/4.ef6b4896.chunk.js"
   },
   {
-    "revision": "3bd004f870974dd57101",
-    "url": "/learning-app/static/js/5.3cb22109.chunk.js"
+    "revision": "6f7fb21b4fb5d2724114",
+    "url": "/learning-app/static/js/5.dd8ff919.chunk.js"
   },
   {
-    "revision": "e356a4755ea93ad22a42",
-    "url": "/learning-app/static/js/8.85fdc86c.chunk.js"
+    "revision": "ab1cf7b785e718ddcaac",
+    "url": "/learning-app/static/js/8.4a064acd.chunk.js"
   },
   {
-    "revision": "e5bf6115496563297238",
-    "url": "/learning-app/static/js/main.a4b3eea8.chunk.js"
+    "revision": "1c113b173103f3d5d7f5",
+    "url": "/learning-app/static/js/main.c201d335.chunk.js"
   },
   {
-    "revision": "6daad64e6375c8f8c018",
-    "url": "/learning-app/static/js/runtime~main.26225e1a.js"
+    "revision": "d5bd3cafafc975537dd1",
+    "url": "/learning-app/static/js/runtime~main.e66214d4.js"
   },
   {
     "revision": "b3429f7228552315caed819c9f85b061",
