@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import coursePageData from './__mocks__/coursePage'
 import LoadableRouteForTypeWithId from './components/LoadableRouteForTypeWithId/LoadableRouteForTypeWithId'
 import CoursePage from './pages/CoursePage/CoursePage'
 import PdfPage from './pages/PdfPage/PdfPage'
 import TestPage from './pages/Test/Test'
 import './sass/style.scss'
+import Navbar from './pages/Navbar/Navbar'
 
 function getCourseItemById(id, type) {
   return coursePageData.items.find(
@@ -16,19 +17,7 @@ function getCourseItemById(id, type) {
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <header className="page-header">
-        <h1 className="page-header__title">
-          <Link to="/">Learning up</Link>
-        </h1>
-
-        <nav className="nav">
-          <p className="nav__student">
-            <span className="nav__student-name">Дима Крутолянов</span>
-            <span className="nav__student-group">51392</span>
-          </p>
-        </nav>
-      </header>
-
+      <Navbar group={51391} lastName="Крутолянов" firstName="Дима" />
       <main className="page-main">
         <div className="container">
           <Route
