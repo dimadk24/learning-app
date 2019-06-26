@@ -59,9 +59,9 @@ class App extends Component {
         {user.isLoaded && user.isRegistered && (
           <>
             <Navbar
-              group={51391}
-              lastName="Крутолянов"
-              firstName="Дима"
+              group={user.group}
+              lastName={user.lastName}
+              firstName={user.firstName}
               onLogOut={() => {
                 localStorage.removeItem('user')
                 this.setState({ user: { isLoaded: true, isRegistered: false } })
