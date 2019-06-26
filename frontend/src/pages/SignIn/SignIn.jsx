@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for,
+jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
@@ -6,6 +8,8 @@ const SignIn = ({ onSignIn }) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [group, setGroup] = useState('')
+  const [password, setPassword] = useState('')
+  const [wrongPassword, setWrongPassword] = useState(false)
   return (
     <>
       <header className="page-header">
@@ -19,11 +23,45 @@ const SignIn = ({ onSignIn }) => {
           <form
             className="signup-form form"
             onSubmit={(e) => {
-              onSignIn({ firstName, lastName, group })
+              if (password === 'qwerty12345') {
+                onSignIn({
+                  firstName: firstName || 'Дима',
+                  lastName: lastName || 'Крутолянов',
+                  group: group || 51392,
+                })
+              } else {
+                setWrongPassword(true)
+              }
               e.preventDefault()
             }}
           >
             <h2 className="signup-form__title">Вход</h2>
+
+            <p className="signup-form__item signup-form__item--email">
+              <label htmlFor="email">Электронный адрес</label>
+              <input
+                className="signup-form__input"
+                type="email"
+                name="email"
+                id="email"
+              />
+            </p>
+
+            <div role="group" className="signup-form__columns">
+              <p className="signup-form__item signup-form__item--password">
+                <label htmlFor="password">Пароль</label>
+                {wrongPassword && (
+                  <span style={{ color: 'red' }}>неверный пароль</span>
+                )}
+                <input
+                  className="signup-form__input"
+                  type="password"
+                  name="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </p>
+            </div>
 
             <div role="group" className="signup-form__columns">
               <p className="signup-form__item">
